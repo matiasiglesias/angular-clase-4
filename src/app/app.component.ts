@@ -12,7 +12,7 @@ import { SimpsonApiService } from './simpson-api.service';
 })
 export class AppComponent implements OnInit {
   frases: IFrase[] | undefined;
-  cantidad: number = 1;
+  cantidad: number = 4;
 
   constructor(private api: SimpsonApiService) {}
 
