@@ -8,11 +8,17 @@ import { ItemFraseComponent } from './item-frase/item-frase.component';
 import { FormsModule } from '@angular/forms';
 import { PersonajeComponent } from './personaje/personaje.component';
 import { HomeComponent } from './home/home.component';
+import { ActivatedRouteSnapshot, RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [AppComponent, ItemFraseComponent, PersonajeComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    ItemFraseComponent,
+    PersonajeComponent,
+    HomeComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule, RouterModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

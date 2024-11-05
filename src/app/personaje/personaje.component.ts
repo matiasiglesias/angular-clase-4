@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SimpsonApiService } from '../simpson-api.service';
 import { IFrase } from '../frase.model';
 
 @Component({
@@ -8,24 +7,14 @@ import { IFrase } from '../frase.model';
   templateUrl: './personaje.component.html',
   styleUrl: './personaje.component.css',
 })
-export class PersonajeComponent implements OnInit {
+export class PersonajeComponent {
   nombre?: string;
   frases: IFrase[] | undefined;
 
-  constructor(private route: ActivatedRoute, private api: SimpsonApiService) {
-    this.route.params.subscribe((params) => {
-      this.nombre = params['nombre'];
-    });
-  }
-
-  ngOnInit(): void {
-    this.fetchData();
-  }
-
-  fetchData(): void {
-    this.api.fetchDataFromPersonaje(this.nombre!).subscribe((data) => {
-      console.log(data);
-      this.frases = data;
+  constructor(private route: ActivatedRoute) {
+    this.route.data.subscribe(({ frases }) => {
+      console.log('recibi', frases);
+      this.frases = frases;
     });
   }
 }
