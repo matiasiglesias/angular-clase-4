@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ItemFraseComponent } from './item-frase/item-frase.component';
 import { FormsModule } from '@angular/forms';
+import { PersonajeComponent } from './personaje/personaje.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, ItemFraseComponent],
+  declarations: [AppComponent, ItemFraseComponent, PersonajeComponent, HomeComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [HttpClientModule],
   bootstrap: [AppComponent],

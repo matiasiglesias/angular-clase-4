@@ -10,19 +10,4 @@ import { SimpsonApiService } from './simpson-api.service';
   providers: [HttpClient],
   styleUrl: './app.component.css',
 })
-export class AppComponent implements OnInit {
-  frases: IFrase[] | undefined;
-  cantidad: number = 4;
-
-  constructor(private api: SimpsonApiService) {}
-
-  ngOnInit(): void {
-    this.fetchData();
-  }
-
-  fetchData(): void {
-    this.api.fetchData(this.cantidad).subscribe((data) => {
-      this.frases = data;
-    });
-  }
-}
+export class AppComponent {}

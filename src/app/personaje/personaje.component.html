@@ -1,0 +1,9 @@
+<a class="btn btn-primary" routerLink="/">Volver</a>
+
+<p>Muestro frases del personaje <span class="fw-bold"> {{ nombre }} </span></p>
+
+<div class="container">
+  <ul>
+    <li *ngFor="let frase of frases">{{ frase.quote }}</li>
+  </ul>
+</div>

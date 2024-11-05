@@ -14,4 +14,11 @@ export class SimpsonApiService {
       .get(`https://thesimpsonsquoteapi.glitch.me/quotes?count=${count}`)
       .pipe(map((res: any) => res as IFrase[]));
   }
+  fetchDataFromPersonaje(nombre: string): Observable<IFrase[]> {
+    return this.http
+      .get(
+        `https://thesimpsonsquoteapi.glitch.me/quotes?character=${nombre}&count=10`
+      )
+      .pipe(map((res: any) => res as IFrase[]));
+  }
 }
